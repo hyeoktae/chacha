@@ -9,7 +9,19 @@
 import Foundation
 import Firebase
 
-final class FireBase {
-  static let shared = FireBase()
+
+final class Firebase {
+  static let shared = Firebase()
+  
+  let db = Firestore.firestore()
+  
+  // Firebase 초기화
+  func firebaseInitialize() {
+    FirebaseApp.configure()
+  }
+  
+  func test() {
+    
+  }
   
 }

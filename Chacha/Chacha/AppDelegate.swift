@@ -26,6 +26,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   let mainVC = MainVC()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    Firebase.shared.firebaseInitialize()
     checkUUID()
     setupBeacon()
     
