@@ -13,11 +13,11 @@ import CoreBluetooth
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
   
+  // Beacon / location properties
   var locationManager = CLLocationManager()
   let uuid = UUID(uuidString: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825")!
   lazy var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "iBeacon")
-  
-  private var myUUID = UserDefaults.standard.string(forKey: "uuid")
+  private var baseUUID = UserDefaults.standard.string(forKey: "uuid")
   
   var window: UIWindow?
   private let mainVC = MainVC()
@@ -50,17 +50,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     // 이걸 써줘야 백그라운드에서 멈추지 않고 돈다
   }
   
+  // Userdefault에 uuid 값 유무 체크
   private func checkUUID() {
-    let baseUUID = UserDefaults.standard.string(forKey: "uuid")
-    
-    if baseUUID == nil { //학생등록X -> 이름 & 스쿨 & 우리집 등록(map) 화면
-//      myUUID = UUID.init().uuidString
-//      UserDefaults.standard.set(uuid, forKey: "uuid")
-      print("최초생성한 UUID: ", myUUID)
-      
-    } else {
-      print("생성된 UUID", myUUID)
-    }
+    guard baseUUID != nil else { return }
+    mainVC.myUUID = baseUUID
   }
 }
 

@@ -10,22 +10,27 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 
-class MainVC: UIViewController {
-  
+final class MainVC: UIViewController {
+  // private 안됨 appdelegate에서 사용
   var myUUID: String?
   
-  let registerVC = RegisterVC()
+  private let registerVC = RegisterVC()
   
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    firstRunApp()
     
   }
   
-  override func viewDidAppear(_ animated: Bool) {
+  // appdelegate 에서 넘어오는 uuid값의 유무 확인 후 nil이면 present
+  private func firstRunApp() {
+    guard myUUID == nil else { return }
+    present(registerVC, animated: true)
   }
+  
+  
   
 //  private func checkUUID() {
 //    let baseUUID = UserDefaults.standard.string(forKey: "uuid")
