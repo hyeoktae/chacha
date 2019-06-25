@@ -19,6 +19,7 @@
 		5286A80822C1FC4800D04E55 /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80722C1FC4800D04E55 /* FireBase.swift */; };
 		5286A80A22C1FC6F00D04E55 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80922C1FC6F00D04E55 /* Extension.swift */; };
 		5286A80D22C1FD9D00D04E55 /* IBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80C22C1FD9D00D04E55 /* IBeacon.swift */; };
+		E68CA62822C238F500AF86E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E68CA62722C238F500AF86E7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5286A80922C1FC6F00D04E55 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5286A80C22C1FD9D00D04E55 /* IBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeacon.swift; sourceTree = "<group>"; };
 		B9D0F3058DAC25A1266D8653 /* Pods_Chacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E68CA62722C238F500AF86E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF99AD7A6E8984012B92B5A0 /* Pods-Chacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.release.xcconfig"; path = "Target Support Files/Pods-Chacha/Pods-Chacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				5286A7ED22C1F9AE00D04E55 /* Assets.xcassets */,
 				5286A7EF22C1F9AE00D04E55 /* LaunchScreen.storyboard */,
 				5286A7F222C1F9AE00D04E55 /* Info.plist */,
+				E68CA62722C238F500AF86E7 /* GoogleService-Info.plist */,
 			);
 			path = Chacha;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				5286A7F122C1F9AE00D04E55 /* LaunchScreen.storyboard in Resources */,
 				5286A7EE22C1F9AE00D04E55 /* Assets.xcassets in Resources */,
+				E68CA62822C238F500AF86E7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
