@@ -10,11 +10,14 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 
-<<<<<<< HEAD
-
 class MainVC: UIViewController {
   
-  var uuid = UserDefaults.standard.string(forKey: "uuid")
+  // Beacon Properties
+  var locationManager = CLLocationManager()
+  let uuid = UUID(uuidString: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825")!
+  lazy var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "iBeacon")
+  
+  var myUUID = UserDefaults.standard.string(forKey: "uuid")
   
   let registerVC = RegisterVC()
   
@@ -27,40 +30,24 @@ class MainVC: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
+    setupBeacon()
     checkUUID()
+    
   }
   
   private func checkUUID() {
     let baseUUID = UserDefaults.standard.string(forKey: "uuid")
     
     if baseUUID == nil { //학생등록X -> 이름 & 스쿨 & 우리집 등록(map) 화면
-      uuid = UUID.init().uuidString
+      myUUID = UUID.init().uuidString
       UserDefaults.standard.set(uuid, forKey: "uuid")
-      print("최초생성한 UUID: ", uuid)
+      print("최초생성한 UUID: ", myUUID)
       
       present(RegisterVC(), animated: true)
       
     } else {
-      print("생성된 UUID", uuid)
+      print("생성된 UUID", myUUID)
     }
-    
-  }
-  
-  
-  
-  
-  
-=======
-class MainVC: UIViewController {
-  
-  // Beacon Properties
-  var locationManager = CLLocationManager()
-  let uuid = UUID(uuidString: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825")!
-  lazy var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "iBeacon")
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupBeacon()
   }
   
   func setupBeacon() {
@@ -74,6 +61,5 @@ class MainVC: UIViewController {
     
   }
   
->>>>>>> d1ce56fca42062b833fe02d534e71c2e91e11e0b
 }
 
