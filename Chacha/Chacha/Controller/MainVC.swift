@@ -30,9 +30,7 @@ class MainVC: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    setupBeacon()
     checkUUID()
-    
   }
   
   private func checkUUID() {
@@ -48,17 +46,6 @@ class MainVC: UIViewController {
     } else {
       print("생성된 UUID", myUUID)
     }
-  }
-  
-  func setupBeacon() {
-    locationManager = CLLocationManager.init()              // locationManager 초기화.
-    locationManager.delegate = self                         // 델리게이트 넣어줌.
-    locationManager.requestAlwaysAuthorization()            // 위치 권한 받아옴.
-    
-    locationManager.startUpdatingLocation()                 // 위치 업데이트 시작
-    locationManager.allowsBackgroundLocationUpdates = true  // 백그라운드에서도 위치를 체크할 것인지에 대한 여부. 필요없으면 false로 처리하자.
-    locationManager.pausesLocationUpdatesAutomatically = false  // 이걸 써줘야 백그라운드에서 멈추지 않고 돈다
-    
   }
   
 }

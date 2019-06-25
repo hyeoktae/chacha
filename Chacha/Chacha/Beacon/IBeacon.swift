@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import CoreBluetooth
 
-extension MainVC: CLLocationManagerDelegate {
+extension AppDelegate: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     if status == .authorizedAlways {
       monitorBeacons()
