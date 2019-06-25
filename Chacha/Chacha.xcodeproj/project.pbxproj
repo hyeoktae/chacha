@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F708FE2FDAB0FC79F1FC40E /* Pods_Chacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D0F3058DAC25A1266D8653 /* Pods_Chacha.framework */; };
 		5286A7E722C1F9AD00D04E55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A7E622C1F9AD00D04E55 /* AppDelegate.swift */; };
 		5286A7EE22C1F9AE00D04E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5286A7ED22C1F9AE00D04E55 /* Assets.xcassets */; };
 		5286A7F122C1F9AE00D04E55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5286A7EF22C1F9AE00D04E55 /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030D1D78CACB7314697BB1BC /* Pods-Chacha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.debug.xcconfig"; path = "Target Support Files/Pods-Chacha/Pods-Chacha.debug.xcconfig"; sourceTree = "<group>"; };
 		5286A7E322C1F9AD00D04E55 /* Chacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chacha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5286A7E622C1F9AD00D04E55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5286A7ED22C1F9AE00D04E55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		5286A80722C1FC4800D04E55 /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
 		5286A80922C1FC6F00D04E55 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5286A80C22C1FD9D00D04E55 /* IBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeacon.swift; sourceTree = "<group>"; };
+		B9D0F3058DAC25A1266D8653 /* Pods_Chacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF99AD7A6E8984012B92B5A0 /* Pods-Chacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.release.xcconfig"; path = "Target Support Files/Pods-Chacha/Pods-Chacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F708FE2FDAB0FC79F1FC40E /* Pods_Chacha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E024FFC684DA3DBC965F7B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0F3058DAC25A1266D8653 /* Pods_Chacha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5286A7DA22C1F9AD00D04E55 = {
 			isa = PBXGroup;
 			children = (
 				5286A7E522C1F9AD00D04E55 /* Chacha */,
 				5286A7E422C1F9AD00D04E55 /* Products */,
+				B91BC68A7760D537F9641DA6 /* Pods */,
+				1E024FFC684DA3DBC965F7B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +145,15 @@
 			path = Beacon;
 			sourceTree = "<group>";
 		};
+		B91BC68A7760D537F9641DA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				030D1D78CACB7314697BB1BC /* Pods-Chacha.debug.xcconfig */,
+				FF99AD7A6E8984012B92B5A0 /* Pods-Chacha.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5286A7F522C1F9AE00D04E55 /* Build configuration list for PBXNativeTarget "Chacha" */;
 			buildPhases = (
+				075F67C7C4CD55EE512B1C70 /* [CP] Check Pods Manifest.lock */,
 				5286A7DF22C1F9AD00D04E55 /* Sources */,
 				5286A7E022C1F9AD00D04E55 /* Frameworks */,
 				5286A7E122C1F9AD00D04E55 /* Resources */,
+				85DF71F406B2682554D84DC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +220,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		075F67C7C4CD55EE512B1C70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chacha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85DF71F406B2682554D84DC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chacha/Pods-Chacha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chacha/Pods-Chacha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chacha/Pods-Chacha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5286A7DF22C1F9AD00D04E55 /* Sources */ = {
@@ -344,6 +412,7 @@
 		};
 		5286A7F622C1F9AE00D04E55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 030D1D78CACB7314697BB1BC /* Pods-Chacha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -364,6 +433,7 @@
 		};
 		5286A7F722C1F9AE00D04E55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF99AD7A6E8984012B92B5A0 /* Pods-Chacha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
