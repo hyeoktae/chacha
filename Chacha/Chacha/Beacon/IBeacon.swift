@@ -11,11 +11,14 @@ import CoreLocation
 import CoreBluetooth
 
 extension AppDelegate: CLLocationManagerDelegate {
+  
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    print("check location state")
     if status == .authorizedAlways {
       monitorBeacons()
     } else {
       // 현재 위치가 항상 허용이 아니라면 설정으로 이동해서 항상허용으로 바꾸게 유도해야함
+      moveToSetting()
     }
   }
   
@@ -48,7 +51,6 @@ extension AppDelegate: CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-    print("run")
     for beacon in beacons {
       if beacon.proximityUUID == uuid {
         switch beacon.proximity {
@@ -71,4 +73,6 @@ extension AppDelegate: CLLocationManagerDelegate {
       }
     }
   }
+  
+  
 }

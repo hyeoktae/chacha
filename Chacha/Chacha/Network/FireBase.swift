@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import Firebase
+
+final class FireBase {
+  static let shared = FireBase()
+  
+}
