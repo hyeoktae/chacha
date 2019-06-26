@@ -21,6 +21,8 @@
 		5286A80D22C1FD9D00D04E55 /* IBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80C22C1FD9D00D04E55 /* IBeacon.swift */; };
 		52AD0A2222C35569001A7965 /* AddBeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD0A2122C35569001A7965 /* AddBeaconVC.swift */; };
 		52AD0A2422C35578001A7965 /* AddBeaconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD0A2322C35578001A7965 /* AddBeaconView.swift */; };
+		52AD0A2622C35B48001A7965 /* AddBeaconDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD0A2522C35B48001A7965 /* AddBeaconDetailView.swift */; };
+		52AD0A2822C36286001A7965 /* AddBeaconDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD0A2722C36286001A7965 /* AddBeaconDetailVC.swift */; };
 		E68CA62822C238F500AF86E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E68CA62722C238F500AF86E7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		5286A80C22C1FD9D00D04E55 /* IBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeacon.swift; sourceTree = "<group>"; };
 		52AD0A2122C35569001A7965 /* AddBeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconVC.swift; sourceTree = "<group>"; };
 		52AD0A2322C35578001A7965 /* AddBeaconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconView.swift; sourceTree = "<group>"; };
+		52AD0A2522C35B48001A7965 /* AddBeaconDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconDetailView.swift; sourceTree = "<group>"; };
+		52AD0A2722C36286001A7965 /* AddBeaconDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconDetailVC.swift; sourceTree = "<group>"; };
 		B9D0F3058DAC25A1266D8653 /* Pods_Chacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68CA62722C238F500AF86E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF99AD7A6E8984012B92B5A0 /* Pods-Chacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.release.xcconfig"; path = "Target Support Files/Pods-Chacha/Pods-Chacha.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				5286A7F922C1FA1F00D04E55 /* View */,
 				5286A7FB22C1FA2900D04E55 /* Network */,
 				5286A7FA22C1FA2500D04E55 /* Data */,
+				52AD0A2922C394FB001A7965 /* Cell */,
 				5286A80B22C1FD0F00D04E55 /* Beacon */,
 				5286A7FC22C1FA3200D04E55 /* Extension */,
 				5286A7ED22C1F9AE00D04E55 /* Assets.xcassets */,
@@ -108,6 +113,7 @@
 				5286A7FD22C1FB1600D04E55 /* MainVC.swift */,
 				5286A7FF22C1FB2900D04E55 /* RegisterVC.swift */,
 				52AD0A2122C35569001A7965 /* AddBeaconVC.swift */,
+				52AD0A2722C36286001A7965 /* AddBeaconDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 				5286A80122C1FC2000D04E55 /* MainView.swift */,
 				5286A80322C1FC2C00D04E55 /* RegisterView.swift */,
 				52AD0A2322C35578001A7965 /* AddBeaconView.swift */,
+				52AD0A2522C35B48001A7965 /* AddBeaconDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +159,13 @@
 				5286A80C22C1FD9D00D04E55 /* IBeacon.swift */,
 			);
 			path = Beacon;
+			sourceTree = "<group>";
+		};
+		52AD0A2922C394FB001A7965 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B91BC68A7760D537F9641DA6 /* Pods */ = {
@@ -290,6 +304,8 @@
 				5286A80422C1FC2C00D04E55 /* RegisterView.swift in Sources */,
 				5286A80222C1FC2000D04E55 /* MainView.swift in Sources */,
 				52AD0A2422C35578001A7965 /* AddBeaconView.swift in Sources */,
+				52AD0A2622C35B48001A7965 /* AddBeaconDetailView.swift in Sources */,
+				52AD0A2822C36286001A7965 /* AddBeaconDetailVC.swift in Sources */,
 				5286A7E722C1F9AD00D04E55 /* AppDelegate.swift in Sources */,
 				5286A7FE22C1FB1600D04E55 /* MainVC.swift in Sources */,
 				5286A80822C1FC4800D04E55 /* FireBase.swift in Sources */,

@@ -15,6 +15,7 @@ final class IBeacon {
   static let shared = IBeacon()
   
   var nearBeacons: [CLBeacon]?
+  var newBeacons: [CLBeacon]?
 }
 
 extension AppDelegate: CLLocationManagerDelegate {
