@@ -26,9 +26,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   let mainVC = MainVC()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    Firebase.shared.firebaseInitialize()
-    checkUUID()
+    
     setupBeacon()
+    checkUUID()
+    
+    Firebase.shared.firebaseInitialize()
     
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = mainVC
@@ -70,6 +72,5 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   func moveToSetting() {
     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
   }
-  
 }
 

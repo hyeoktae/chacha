@@ -11,7 +11,7 @@ import UIKit
 protocol AdminViewDelegate: class {
   //스쿨관리 버튼 누를시 실행할 메소드
   func getAdminTableView()
-  
+  func moveToAddBeaconVC()
 }
 
 
@@ -51,7 +51,7 @@ class AdminView: UIView {
     let button = UIButton(type: .system)
     button.backgroundColor = .green
     button.setTitle("비콘관리", for: .normal)
-    button.addTarget(self, action: #selector(didTapAdminButton(_:)), for: .touchUpInside)
+    button.addTarget(self, action: #selector(didTapBeaconButton(_:)), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -98,6 +98,10 @@ class AdminView: UIView {
   
   @objc private func didTapAdminButton(_ sender: UIButton) {
     delegate?.getAdminTableView()
+  }
+  
+  @objc private func didTapBeaconButton(_ sender: UIButton) {
+    delegate?.moveToAddBeaconVC()
   }
   
   required init?(coder aDecoder: NSCoder) {

@@ -28,7 +28,8 @@ final class MainVC: UIViewController {
   }
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    firstRunApp()
+    // 이부분 임의로 사용하기 위해 주석처리
+//    firstRunApp()
   }
   
   // appdelegate 에서 넘어오는 uuid값의 유무 확인 후 nil이면 present

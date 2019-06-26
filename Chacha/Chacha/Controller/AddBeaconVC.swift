@@ -15,6 +15,19 @@ class AddBeaconVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      Firebase.shared.getBeacons {
+        switch $0 {
+        case .failure(let err):
+          IBeacon.shared.downloadBeacons = []
+          print(err.localizedDescription)
+        case .success(_):
+          print("addBeaconVC after getBeacons: ", IBeacon.shared.downloadBeacons)
+        }
+        IBeacon.shared.compareBeacons()
+        DispatchQueue.main.async {
+          self.addBeaconView.tblViewReload()
+        }
+      }
       addBeaconView.delegate = self
       view.addSubview(addBeaconView)
     }
@@ -22,8 +35,35 @@ class AddBeaconVC: UIViewController {
 }
 
 extension AddBeaconVC: AddBeaconViewDelegate {
-  func submit(_ indexRow: Int) {
-    print("click")
+  func popVC() {
+    dismiss(animated: true)
+  }
+  
+  func reload() {
+    Firebase.shared.getBeacons {
+      switch $0 {
+      case .failure(let err):
+        IBeacon.shared.downloadBeacons = []
+        print(err.localizedDescription)
+      case .success(_):
+        print("addBeaconVC after getBeacons: ", IBeacon.shared.downloadBeacons)
+//        print("download Beacons: ", IBeacon.shared.downloadBeacons)
+//        print("near Beacons: ", IBeacon.shared.nearBeacons)
+//        print("new Beacons: ", IBeacon.shared.newBeacons)
+//        print("run Reload Btn")
+      }
+      
+      IBeacon.shared.compareBeacons()
+      DispatchQueue.main.async {
+        self.addBeaconView.tblViewReload()
+      }
+    }
+    
+  }
+  
+  func selectedCell(_ indexRow: Int) {
+//    print("click")
+    addBeaconDetailVC.indexRow = indexRow
     addBeaconDetailVC.modalPresentationStyle = .overCurrentContext
     present(addBeaconDetailVC, animated: true)
   }

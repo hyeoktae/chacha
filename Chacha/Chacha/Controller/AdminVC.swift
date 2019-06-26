@@ -33,9 +33,13 @@ class AdminVC: UIViewController {
 
 
 extension AdminVC: AdminViewDelegate {
+  func moveToAddBeaconVC() {
+    present(AddBeaconVC(), animated: true)
+  }
+  
   func getAdminTableView() {
     present(DetailAdminVC(), animated: true)
   }
-  
+
   
 }

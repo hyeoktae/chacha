@@ -35,5 +35,7 @@ extension RegisterVC: RegisterViewDelegate {
   // student 등록 / enroll btn 클릭
   func registerStudent() {
     print("didTapEnrollBtnDelegate")
+    // 나중에 이부분 수정해야함 현재는 임의로 dismiss
+    dismiss(animated: true)
   }
 }

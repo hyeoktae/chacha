@@ -10,11 +10,7 @@ import UIKit
 
 final class AddBeaconDetailVC: UIViewController {
   
-  var indexRow: Int? {
-    willSet(new) {
-      addBeaconDetailView.indexRow = new ?? 0
-    }
-  }
+  var indexRow: Int?
   
   private let addBeaconDetailView: AddBeaconDetailView = {
     let view = AddBeaconDetailView()
@@ -42,12 +38,45 @@ final class AddBeaconDetailVC: UIViewController {
 
 
 extension AddBeaconDetailVC: AddBeaconDetailViewDelegate {
-  func submit() {
-    presentingViewController?.dismiss(animated: true)
+  func submit(name: String, location: String) {
+    
+    IBeacon.shared.readyToUpdateBeacon(index: indexRow, name: name, location: location)
+    print("업데이트 준비 후 uploadBeacons: ", IBeacon.shared.uploadBeacons)
+    print("업데이트 준비 후 downloadBeacons: ", IBeacon.shared.downloadBeacons)
+    print("업데이트 준비 후 newBeacons: ", IBeacon.shared.newBeacons)
+    print("\n ===== 한단 끝냄 ===== \n")
+    
+    Firebase.shared.addBeacons(IBeacon.shared.uploadBeacons) {
+      switch $0 {
+      case .failure(let err):
+        print("error: ", err.localizedDescription)
+      case .success(_):
+        DispatchQueue.main.async {
+          print("success")
+          self.addBeaconDetailView.reset()
+          self.presentingViewController?.dismiss(animated: true)
+        }
+      }
+    }
+    
   }
   
   func cancel() {
+    addBeaconDetailView.reset()
     presentingViewController?.dismiss(animated: true)
+    
+//    Firebase.shared.getBeacons {
+//      switch $0 {
+//      case .failure(let err):
+//        print("error: ", err.localizedDescription)
+//      case .success(_):
+//        DispatchQueue.main.async {
+//          print("success")
+//          self.presentingViewController?.dismiss(animated: true)
+//        }
+//      }
+//    }
+    
   }
   
   

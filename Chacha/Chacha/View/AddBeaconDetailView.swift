@@ -9,13 +9,11 @@
 import UIKit
 
 protocol AddBeaconDetailViewDelegate: class {
-  func submit()
+  func submit(name: String, location: String)
   func cancel()
 }
 
 final class AddBeaconDetailView: UIView {
-  
-  var indexRow: Int?
   
   var delegate: AddBeaconDetailViewDelegate?
   
@@ -41,6 +39,7 @@ final class AddBeaconDetailView: UIView {
     tf.placeholder = " plz input name "
     tf.font = UIFont.boldSystemFont(ofSize: 20)
     tf.layer.borderWidth = 1
+    tf.addTarget(self, action: #selector(keyboardDown(_:)), for: .editingDidEndOnExit)
     return tf
   }()
   
@@ -50,6 +49,7 @@ final class AddBeaconDetailView: UIView {
     tf.placeholder = " plz input location "
     tf.font = UIFont.boldSystemFont(ofSize: 20)
     tf.layer.borderWidth = 1
+    tf.addTarget(self, action: #selector(keyboardDown(_:)), for: .editingDidEndOnExit)
     return tf
   }()
   
@@ -84,13 +84,15 @@ final class AddBeaconDetailView: UIView {
     guard nameTextField.text != "", locationTextField.text != "" else {
       print("textField 값 비었다.")
       return }
-    reset()
-    delegate?.submit()
+    delegate?.submit(name: nameTextField.text!, location: locationTextField.text!)
   }
   
   @objc private func didTapcancelBtn(_ sender: UIButton) {
-    reset()
     delegate?.cancel()
+  }
+  
+  @objc private func keyboardDown(_ sender: UITextField) {
+    resignFirstResponder()
   }
   
   private func addSubviews() {
@@ -98,7 +100,7 @@ final class AddBeaconDetailView: UIView {
     views.forEach { addSubview($0) }
   }
   
-  private func reset() {
+  func reset() {
     nameTextField.text = ""
     locationTextField.text = ""
   }

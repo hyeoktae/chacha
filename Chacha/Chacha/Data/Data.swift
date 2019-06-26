@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+enum fail: Error {
+  case downloadFail, networkError, noData, uploadFail
+}
+
+//var testBeaconData = [beaconInfo]()
+//
+//func testData() {
+//  for i in 0...5 {
+//  testBeaconData.append(beaconInfo(uuid: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825", name: "name\(i)", location: "location\(i)"))
+//  }
+//}

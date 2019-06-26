@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import CoreLocation
 
 
 final class Firebase {
@@ -23,8 +24,65 @@ final class Firebase {
     db = Firestore.firestore()
   }
   
-  func test() {
+  func addBeacons(_ beacons: [beaconInfo]?, completion: @escaping (Result<Bool, fail>) -> ()) {
+    guard let beacons = beacons else {completion(.failure(.noData)); return }
+    let name = beacons.map { $0.name }
+    let location = beacons.map { $0.location }
+    let uuid = beacons.map { $0.uuid }
     
+    self.db.collection("beacon").document("uuid").setData(["uuid" : uuid], completion: { (error) in
+      guard error == nil else { completion(.failure(.uploadFail)); return }
+      
+      self.db.collection("beacon").document("name").setData(["name" : name], completion: { (error) in
+        guard error == nil else { completion(.failure(.uploadFail)); return }
+        
+        self.db.collection("beacon").document("location").setData(["location" : location], completion: { (error) in
+          guard error == nil else { completion(.failure(.uploadFail)); return }
+          completion(.success(true))
+        })
+      })
+    })
+  }
+  
+  
+  func getBeacons(completion: @escaping (Result<Bool, fail>) -> ()) {
+    var uuid = [String]()
+    var name = [String]()
+    var location = [String]()
+    var downloadBeacons = [beaconInfo]()
+    
+    self.db.collection("beacon").getDocuments { (snap, err) in
+      guard err == nil else { return completion(.failure(.networkError)) }
+      guard let documents = snap?.documents else { return completion(.failure(.downloadFail)) }
+      
+      
+      for document in documents {
+        if let inUUID = document.data()["uuid"] as? [String] {
+          uuid = inUUID
+        }
+        if let inName = document.data()["name"] as? [String] {
+          name = inName
+        }
+        if let inLocation = document.data()["location"] as? [String] {
+          location = inLocation
+        }
+      }
+      
+      guard uuid.count != 0 else { return completion(.failure(.noData)) }
+      
+      print("uuid: ", uuid)
+      print("location: ", location)
+      print("name: ", name)
+      
+      for idx in 0 ..< uuid.count {
+        downloadBeacons.append(beaconInfo(uuid: uuid[idx], name: name[idx], location: location[idx]))
+      }
+      
+      IBeacon.shared.downloadBeacons = downloadBeacons
+      print("inside getBeacons: ", IBeacon.shared.downloadBeacons)
+      
+      completion(.success(true))
+    }
   }
   
 }
