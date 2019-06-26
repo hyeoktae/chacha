@@ -14,7 +14,7 @@ class RegisterVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    registerView.delegate = self
     setupRegisterView()
     
   }
@@ -29,4 +29,11 @@ class RegisterVC: UIViewController {
     registerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
   }
   
+}
+
+extension RegisterVC: RegisterViewDelegate {
+  // student 등록 / enroll btn 클릭
+  func registerStudent() {
+    print("didTapEnrollBtnDelegate")
+  }
 }

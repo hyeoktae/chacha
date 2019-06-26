@@ -8,9 +8,17 @@
 
 import UIKit
 
-class RegisterView: UIView {
+
+protocol RegisterViewDelegate: class {
+  // student 등록 시 실행할 메소드
+  func registerStudent()
+}
+
+final class RegisterView: UIView {
   
   // MARK: - Properties
+  
+  var delegate: RegisterViewDelegate?
   
   let topLabel: UILabel = {
     let label = UILabel()
@@ -84,7 +92,7 @@ class RegisterView: UIView {
     button.setTitle("등록하기", for: .normal)
     button.tintColor = .white
     button.layer.cornerRadius = 20
-    button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    button.addTarget(self, action: #selector(didTapEnrollButton(_:)), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -159,8 +167,9 @@ class RegisterView: UIView {
     enrollButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     
   }
-  @objc func didTapButton() {
-    print("didTapButton")
+  @objc func didTapEnrollButton(_ sender: UIButton) {
+    print("didTapEnrollButton")
+    delegate?.registerStudent()
   }
   
   required init?(coder aDecoder: NSCoder) {

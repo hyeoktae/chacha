@@ -10,6 +10,13 @@ import Foundation
 import CoreLocation
 import CoreBluetooth
 
+// beacon에 대한 data
+final class IBeacon {
+  static let shared = IBeacon()
+  
+  var nearBeacons: [CLBeacon]?
+}
+
 extension AppDelegate: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -51,6 +58,7 @@ extension AppDelegate: CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+    IBeacon.shared.nearBeacons = beacons
     for beacon in beacons {
       if beacon.proximityUUID == uuid {
         switch beacon.proximity {
