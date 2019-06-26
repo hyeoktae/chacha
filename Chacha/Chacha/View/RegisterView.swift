@@ -7,7 +7,20 @@
 //
 
 import UIKit
+protocol RegisterViewDelegate: class {
+  //student 등록 시 실행할 메소드
+  func registerStudent()
+}
 
+<<<<<<< HEAD
+final class RegisterView: UIView {
+  
+  var delegate: RegisterViewDelegate?
+  
+  // MARK: - Properties
+  
+  private let topLabel: UILabel = {
+=======
 
 protocol RegisterViewDelegate: class {
   // student 등록 시 실행할 메소드
@@ -21,21 +34,15 @@ final class RegisterView: UIView {
   var delegate: RegisterViewDelegate?
   
   let topLabel: UILabel = {
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
     let label = UILabel()
     label.text = "학생등록"
     label.font = UIFont.boldSystemFont(ofSize: 25)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
-  
-  let dismissButton: UIButton = {
-    let button = UIButton(type: .custom)
-    button.setImage(UIImage(named: "dismiss"), for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-  }()
-  
-  let nameLabel: UILabel = {
+
+  private let nameLabel: UILabel = {
     let label = UILabel()
     label.text = "이름"
     label.font = UIFont.systemFont(ofSize: 20)
@@ -43,7 +50,7 @@ final class RegisterView: UIView {
     return label
   }()
   
-  let nameTextField: UITextField = {
+  private let nameTextField: UITextField = {
     let textField = UITextField()
     textField.backgroundColor = #colorLiteral(red: 0.9351945585, green: 0.9444539105, blue: 0.9444539105, alpha: 1)
     textField.placeholder = "이름"
@@ -52,7 +59,7 @@ final class RegisterView: UIView {
     return textField
   }()
   
-  let schoolLabel: UILabel = {
+  private let schoolLabel: UILabel = {
     let label = UILabel()
     label.text = "스쿨"
     label.font = UIFont.systemFont(ofSize: 20)
@@ -60,7 +67,7 @@ final class RegisterView: UIView {
     return label
   }()
   
-  let schoolTextField: UITextField = {
+  private let schoolTextField: UITextField = {
     let textField = UITextField()
     textField.backgroundColor = #colorLiteral(red: 0.9351945585, green: 0.9444539105, blue: 0.9444539105, alpha: 1)
     textField.placeholder = "스쿨"
@@ -69,7 +76,7 @@ final class RegisterView: UIView {
     return textField
   }()
   
-  let addresslLabel: UILabel = {
+  private let addresslLabel: UILabel = {
     let label = UILabel()
     label.text = "주소"
     label.font = UIFont.systemFont(ofSize: 20)
@@ -77,7 +84,7 @@ final class RegisterView: UIView {
     return label
   }()
   
-  let addressTextField: UITextField = {
+  private let addressTextField: UITextField = {
     let textField = UITextField()
     textField.backgroundColor = #colorLiteral(red: 0.9351945585, green: 0.9444539105, blue: 0.9444539105, alpha: 1)
     textField.placeholder = "주소"
@@ -86,7 +93,7 @@ final class RegisterView: UIView {
     return textField
   }()
   
-  let enrollButton: UIButton = {
+  private let enrollButton: UIButton = {
     let button = UIButton()
     button.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
     button.setTitle("등록하기", for: .normal)
@@ -104,32 +111,13 @@ final class RegisterView: UIView {
     setupAutoLayout()
   }
   
-  
-  private func setupAutoLayout() {
-    addSubview(topLabel)
-    addSubview(dismissButton)
-    
-    addSubview(nameLabel)
-    addSubview(nameTextField)
-    
-    addSubview(schoolLabel)
-    addSubview(schoolTextField)
-    
-    addSubview(addresslLabel)
-    addSubview(addressTextField)
-    
-    addSubview(enrollButton)
+  override func layoutSubviews() {
+    super.layoutSubviews()
     
     topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
     topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-    topLabel.trailingAnchor.constraint(equalTo: dismissButton.leadingAnchor).isActive = true
     topLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
     topLabel.heightAnchor.constraint(equalToConstant: 70).isActive = true
-    
-    dismissButton.centerYAnchor.constraint(equalTo: topLabel.centerYAnchor).isActive = true
-    dismissButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-    dismissButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
-    dismissButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
     
     nameLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 30).isActive = true
     nameLabel.leadingAnchor.constraint(equalTo: topLabel.leadingAnchor, constant: 10).isActive = true
@@ -165,10 +153,28 @@ final class RegisterView: UIView {
     enrollButton.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor).isActive = true
     enrollButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
     enrollButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+  }
+  
+  private func setupAutoLayout() {
+    addSubview(topLabel)
     
+    addSubview(nameLabel)
+    addSubview(nameTextField)
+    
+    addSubview(schoolLabel)
+    addSubview(schoolTextField)
+    
+    addSubview(addresslLabel)
+    addSubview(addressTextField)
+    
+    addSubview(enrollButton)
+
   }
   @objc func didTapEnrollButton(_ sender: UIButton) {
+<<<<<<< HEAD
+=======
     print("didTapEnrollButton")
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
     delegate?.registerStudent()
   }
   

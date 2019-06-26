@@ -14,6 +14,10 @@ class RegisterVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
     registerView.delegate = self
     setupRegisterView()
     
@@ -32,8 +36,14 @@ class RegisterVC: UIViewController {
 }
 
 extension RegisterVC: RegisterViewDelegate {
+<<<<<<< HEAD
+  // student 등록 / enrollButton 클릭
+  func registerStudent() {
+    print("didTapEnrollButtonDelegate")
+=======
   // student 등록 / enroll btn 클릭
   func registerStudent() {
     print("didTapEnrollBtnDelegate")
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
   }
 }
