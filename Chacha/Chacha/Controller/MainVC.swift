@@ -26,29 +26,17 @@ final class MainVC: UIViewController {
   }
   
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    firstRunApp()
+  }
+  
   // appdelegate 에서 넘어오는 uuid값의 유무 확인 후 nil이면 present
   private func firstRunApp() {
     guard myUUID == nil else { return }
     print("uuid없으니까 registerVC 띄움")
     present(registerVC, animated: true)
   }
-  
-  
-  
-//  private func checkUUID() {
-//    let baseUUID = UserDefaults.standard.string(forKey: "uuid")
-//
-//    if baseUUID == nil { //학생등록X -> 이름 & 스쿨 & 우리집 등록(map) 화면
-//      myUUID = UUID.init().uuidString
-//      UserDefaults.standard.set(uuid, forKey: "uuid")
-//      print("최초생성한 UUID: ", myUUID)
-//
-//      present(RegisterVC(), animated: true)
-//
-//    } else {
-//      print("생성된 UUID", myUUID)
-//    }
-//  }
   
 }
 
