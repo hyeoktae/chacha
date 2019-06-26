@@ -13,11 +13,14 @@ import Firebase
 final class Firebase {
   static let shared = Firebase()
   
-  lazy var db = Firestore.firestore()
+  private var db: Firestore!
+  private let settings = FirestoreSettings()
   
   // Firebase 초기화
   func firebaseInitialize() {
     FirebaseApp.configure()
+    Firestore.firestore().settings = settings
+    db = Firestore.firestore()
   }
   
   func test() {

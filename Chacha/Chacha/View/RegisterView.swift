@@ -12,6 +12,7 @@ protocol RegisterViewDelegate: class {
   func registerStudent()
 }
 
+<<<<<<< HEAD
 final class RegisterView: UIView {
   
   var delegate: RegisterViewDelegate?
@@ -19,6 +20,21 @@ final class RegisterView: UIView {
   // MARK: - Properties
   
   private let topLabel: UILabel = {
+=======
+
+protocol RegisterViewDelegate: class {
+  // student 등록 시 실행할 메소드
+  func registerStudent()
+}
+
+final class RegisterView: UIView {
+  
+  // MARK: - Properties
+  
+  var delegate: RegisterViewDelegate?
+  
+  let topLabel: UILabel = {
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
     let label = UILabel()
     label.text = "학생등록"
     label.font = UIFont.boldSystemFont(ofSize: 25)
@@ -155,6 +171,10 @@ final class RegisterView: UIView {
 
   }
   @objc func didTapEnrollButton(_ sender: UIButton) {
+<<<<<<< HEAD
+=======
+    print("didTapEnrollButton")
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
     delegate?.registerStudent()
   }
   

@@ -19,6 +19,7 @@
 		5286A80822C1FC4800D04E55 /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80722C1FC4800D04E55 /* FireBase.swift */; };
 		5286A80A22C1FC6F00D04E55 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80922C1FC6F00D04E55 /* Extension.swift */; };
 		5286A80D22C1FD9D00D04E55 /* IBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A80C22C1FD9D00D04E55 /* IBeacon.swift */; };
+<<<<<<< HEAD
 		E6687A0C22C349CA006DD888 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6687A0B22C349CA006DD888 /* CheckView.swift */; };
 		E6687A0E22C349ED006DD888 /* DetailCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6687A0D22C349ED006DD888 /* DetailCheckView.swift */; };
 		E6687A1222C34A30006DD888 /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6687A1122C34A30006DD888 /* AdminView.swift */; };
@@ -28,6 +29,10 @@
 		E6687A1C22C3556C006DD888 /* AddBeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6687A1B22C3556C006DD888 /* AddBeaconVC.swift */; };
 		E6687A1E22C35584006DD888 /* AddBeaconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6687A1D22C35584006DD888 /* AddBeaconView.swift */; };
 		E6687A2822C3932D006DD888 /* DetailAdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6687A2722C3932D006DD888 /* DetailAdminVC.swift */; };
+=======
+		52AD0A2222C35569001A7965 /* AddBeaconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD0A2122C35569001A7965 /* AddBeaconVC.swift */; };
+		52AD0A2422C35578001A7965 /* AddBeaconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD0A2322C35578001A7965 /* AddBeaconView.swift */; };
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
 		E68CA62822C238F500AF86E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E68CA62722C238F500AF86E7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +51,8 @@
 		5286A80722C1FC4800D04E55 /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
 		5286A80922C1FC6F00D04E55 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5286A80C22C1FD9D00D04E55 /* IBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeacon.swift; sourceTree = "<group>"; };
+		52AD0A2122C35569001A7965 /* AddBeaconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconVC.swift; sourceTree = "<group>"; };
+		52AD0A2322C35578001A7965 /* AddBeaconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconView.swift; sourceTree = "<group>"; };
 		B9D0F3058DAC25A1266D8653 /* Pods_Chacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6687A0B22C349CA006DD888 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		E6687A0D22C349ED006DD888 /* DetailCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCheckView.swift; sourceTree = "<group>"; };
@@ -121,11 +128,15 @@
 			children = (
 				5286A7FD22C1FB1600D04E55 /* MainVC.swift */,
 				5286A7FF22C1FB2900D04E55 /* RegisterVC.swift */,
+<<<<<<< HEAD
 				E6687A1322C34B2D006DD888 /* CheckVC.swift */,
 				E6687A1522C34B39006DD888 /* DetailCheckVC.swift */,
 				E6687A1922C34B51006DD888 /* AdminVC.swift */,
 				E6687A1B22C3556C006DD888 /* AddBeaconVC.swift */,
 				E6687A2722C3932D006DD888 /* DetailAdminVC.swift */,
+=======
+				52AD0A2122C35569001A7965 /* AddBeaconVC.swift */,
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,10 +146,14 @@
 			children = (
 				5286A80122C1FC2000D04E55 /* MainView.swift */,
 				5286A80322C1FC2C00D04E55 /* RegisterView.swift */,
+<<<<<<< HEAD
 				E6687A0B22C349CA006DD888 /* CheckView.swift */,
 				E6687A0D22C349ED006DD888 /* DetailCheckView.swift */,
 				E6687A1122C34A30006DD888 /* AdminView.swift */,
 				E6687A1D22C35584006DD888 /* AddBeaconView.swift */,
+=======
+				52AD0A2322C35578001A7965 /* AddBeaconView.swift */,
+>>>>>>> 8e34908bcda161a1c04abd54ad40a6e7c9a2ea1a
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,10 +322,12 @@
 				5286A80022C1FB2900D04E55 /* RegisterVC.swift in Sources */,
 				E6687A2822C3932D006DD888 /* DetailAdminVC.swift in Sources */,
 				5286A80622C1FC3D00D04E55 /* Data.swift in Sources */,
+				52AD0A2222C35569001A7965 /* AddBeaconVC.swift in Sources */,
 				5286A80D22C1FD9D00D04E55 /* IBeacon.swift in Sources */,
 				E6687A1E22C35584006DD888 /* AddBeaconView.swift in Sources */,
 				5286A80422C1FC2C00D04E55 /* RegisterView.swift in Sources */,
 				5286A80222C1FC2000D04E55 /* MainView.swift in Sources */,
+				52AD0A2422C35578001A7965 /* AddBeaconView.swift in Sources */,
 				5286A7E722C1F9AD00D04E55 /* AppDelegate.swift in Sources */,
 				E6687A0E22C349ED006DD888 /* DetailCheckView.swift in Sources */,
 				5286A7FE22C1FB1600D04E55 /* MainVC.swift in Sources */,
