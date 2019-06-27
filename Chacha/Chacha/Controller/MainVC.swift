@@ -23,6 +23,7 @@ final class MainVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
     mainView.delegate = self
     setupMainView()
   }

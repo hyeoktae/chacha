@@ -34,7 +34,7 @@ final class RegisterView: UIView {
     return label
   }()
   
-  private let nameTextField: UITextField = {
+  let nameTextField: UITextField = {
     let textField = UITextField()
     textField.backgroundColor = #colorLiteral(red: 0.9351945585, green: 0.9444539105, blue: 0.9444539105, alpha: 1)
     textField.placeholder = "이름"
@@ -51,7 +51,7 @@ final class RegisterView: UIView {
     return label
   }()
   
-  private let schoolTextField: UITextField = {
+  let schoolTextField: UITextField = {
     let textField = UITextField()
     textField.backgroundColor = #colorLiteral(red: 0.9351945585, green: 0.9444539105, blue: 0.9444539105, alpha: 1)
     textField.placeholder = "스쿨"
@@ -68,7 +68,7 @@ final class RegisterView: UIView {
     return label
   }()
   
-  private let addressTextField: UITextField = {
+  let addressTextField: UITextField = {
     let textField = UITextField()
     textField.backgroundColor = #colorLiteral(red: 0.9351945585, green: 0.9444539105, blue: 0.9444539105, alpha: 1)
     textField.placeholder = "주소"
@@ -77,7 +77,7 @@ final class RegisterView: UIView {
     return textField
   }()
   
-  private let enrollButton: UIButton = {
+  let enrollButton: UIButton = {
     let button = UIButton()
     button.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
     button.setTitle("등록하기", for: .normal)

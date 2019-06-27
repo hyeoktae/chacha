@@ -21,9 +21,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   // 여기도 다운로드 끝나고 위에꺼에 옵져버 달아서 그때그때 바꿔줘야할듯 인나서 해야징
   lazy var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "iBeacon")
   // 이건 차차가 할꺼야
-  var baseUUID: String? {
-    return UserDefaults.standard.string(forKey: "uuid")
-  }
+//  var baseUUID: String? {
+//    get {
+//      return UserDefaults.standard.string(forKey: "uuid")
+//    }
+//    set {
+//      self.baseUUID = newValue
+//    }
+//  }
+  var baseUUID = UserDefaults.standard.string(forKey: "uuid")
   
   var window: UIWindow?
   let mainVC = MainVC()
@@ -66,8 +72,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   
   // Userdefault에 uuid 값 유무 체크
   private func checkUUID() {
-    guard baseUUID != nil else { return }
-    mainVC.myUUID = baseUUID
+    guard baseUUID == nil else { return print("uuid가 존재.", baseUUID)}
+    baseUUID = UUID.init().uuidString
+    print("uuid가 최초로 생성", baseUUID)
   }
   
   // 위치에 관한 권한이 always가 아닐경우 설정으로 묻지도 따지지도않고 바로이동

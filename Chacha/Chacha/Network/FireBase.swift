@@ -24,6 +24,24 @@ final class Firebase {
     db = Firestore.firestore()
   }
   
+  // Student 추가
+  func addStudent(name: String, uuid: String, home: String?, school: String ) {
+    let docRef = db.collection("students").document(uuid)
+    
+    db.collection("student").document(uuid).setData([
+      "name": name,
+      "uuid": uuid,
+      "school": school
+    ]) { err in
+      if let err = err {
+        print("Error writing document: \(err)")
+      } else {
+        print("Document successfully written!")
+      }
+    }
+    
+  }
+  
   // 비콘 추가 3단 비동기 토나와 ㅅㅂ 더좋은 방법이 있을꺼야 찾아보던가
   func addBeacons(_ beacons: [beaconInfo]?, completion: @escaping (Result<Bool, fail>) -> ()) {
     guard let beacons = beacons else {completion(.failure(.noData)); return }
