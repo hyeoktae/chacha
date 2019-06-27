@@ -77,7 +77,6 @@ class AdminView: UIView {
     schoolButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     schoolButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     schoolButton.bottomAnchor.constraint(equalTo: studentButton.topAnchor).isActive = true
-    schoolButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
     
     studentButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     studentButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
