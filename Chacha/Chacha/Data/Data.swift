@@ -8,6 +8,7 @@
 
 import Foundation
 
+// network 오류 등등 
 enum fail: Error {
   case downloadFail, networkError, noData, uploadFail
 }

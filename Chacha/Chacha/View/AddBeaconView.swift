@@ -57,14 +57,17 @@ class AddBeaconView: UIView {
     views.forEach { addSubview($0) }
   }
   
+  // 나도 이걸 왜 구지 넘기는지모르겠당
   @objc private func didTapReloadBtn(_ sender: UIButton) {
     delegate?.reload()
   }
   
+  // dismiss 할라고
   @objc private func didTapPopBtn(_ sender: UIButton) {
     delegate?.popVC()
   }
   
+  // 진짜 이거 왜했지?
   func tblViewReload() {
     beaconTblView.reloadData()
   }
@@ -93,9 +96,6 @@ class AddBeaconView: UIView {
 
 extension AddBeaconView: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print("AddBeaconView 에서 newBeacons", IBeacon.shared.newBeacons)
-    print("AddBeaconView 에서 nearBeacons", IBeacon.shared.nearBeacons)
-    print("\n ===== 한단 끝냄 ===== \n")
     return IBeacon.shared.newBeacons.count
   }
   

@@ -80,8 +80,10 @@ final class AddBeaconDetailView: UIView {
     addSubviews()
   }
   
+  // submit 하기전 textfield들 값 확인
   @objc private func didTapsubmitBtn(_ sender: UIButton) {
     guard nameTextField.text != "", locationTextField.text != "" else {
+      // alert 설정으로 바꾸던가 말던가 
       print("textField 값 비었다.")
       return }
     delegate?.submit(name: nameTextField.text!, location: locationTextField.text!)
@@ -91,6 +93,7 @@ final class AddBeaconDetailView: UIView {
     delegate?.cancel()
   }
   
+  // 키보드 내리기, 노티로 해도 되지만 기억이 잘안나...
   @objc private func keyboardDown(_ sender: UITextField) {
     resignFirstResponder()
   }
@@ -100,11 +103,13 @@ final class AddBeaconDetailView: UIView {
     views.forEach { addSubview($0) }
   }
   
+  // 말그대로
   func reset() {
     nameTextField.text = ""
     locationTextField.text = ""
   }
   
+  // 알지?
   override func layoutSubviews() {
     super.layoutSubviews()
     let padding: CGFloat = 20

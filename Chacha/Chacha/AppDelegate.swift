@@ -16,8 +16,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   // Beacon & location properties
   
   var locationManager = CLLocationManager()
+  // 이부분 다운로드 하는방향으로 바꿔야함
   let uuid = UUID(uuidString: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825")!
+  // 여기도 다운로드 끝나고 위에꺼에 옵져버 달아서 그때그때 바꿔줘야할듯 인나서 해야징
   lazy var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "iBeacon")
+  // 이건 차차가 할꺼야
   var baseUUID: String? {
     return UserDefaults.standard.string(forKey: "uuid")
   }
@@ -29,7 +32,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     setupBeacon()
     checkUUID()
-    
+    // 파베초기화
     Firebase.shared.firebaseInitialize()
     
     window = UIWindow(frame: UIScreen.main.bounds)
@@ -72,5 +75,17 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   func moveToSetting() {
     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
   }
+  
+  // 알람!
+  func makeAlert(completion: @escaping () -> ()) {
+    let alert = UIAlertController(title: "위치권한 오류", message: "위치 권한을 항상 허용으로 해야만 출석체크가 가능합니다.", preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: "네", style: .destructive) { (_) in
+      completion()
+    }
+    alert.addAction(cancelAction)
+    // appdelegate에서 바로 못띄움 mainVC에 함수 만들어도 될거같은데...
+    mainVC.present(alert, animated: true)
+  }
+  
 }
 

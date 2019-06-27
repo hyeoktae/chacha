@@ -24,6 +24,7 @@ final class Firebase {
     db = Firestore.firestore()
   }
   
+  // 비콘 추가 3단 비동기 토나와 ㅅㅂ 더좋은 방법이 있을꺼야 찾아보던가
   func addBeacons(_ beacons: [beaconInfo]?, completion: @escaping (Result<Bool, fail>) -> ()) {
     guard let beacons = beacons else {completion(.failure(.noData)); return }
     let name = beacons.map { $0.name }
@@ -44,7 +45,8 @@ final class Firebase {
     })
   }
   
-  
+  // 파베에 있는 데이터 긁어오기 파싱하는것 처럼 하면되는데
+  // 더 좋은 방법이 있을껀데... 난 모르거쑴
   func getBeacons(completion: @escaping (Result<Bool, fail>) -> ()) {
     var uuid = [String]()
     var name = [String]()
@@ -79,7 +81,6 @@ final class Firebase {
       }
       
       IBeacon.shared.downloadBeacons = downloadBeacons
-      print("inside getBeacons: ", IBeacon.shared.downloadBeacons)
       
       completion(.success(true))
     }

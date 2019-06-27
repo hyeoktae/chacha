@@ -10,6 +10,7 @@ import UIKit
 
 final class AddBeaconDetailVC: UIViewController {
   
+  // AddBeaconView 의 tblview 셀 클릭시 indexpath.row값
   var indexRow: Int?
   
   private let addBeaconDetailView: AddBeaconDetailView = {
@@ -24,6 +25,7 @@ final class AddBeaconDetailVC: UIViewController {
     view.addSubview(addBeaconDetailView)
     setupAutolayout()
   }
+  
   
   private func setupAutolayout() {
     let guide = view.safeAreaLayoutGuide
@@ -40,12 +42,9 @@ final class AddBeaconDetailVC: UIViewController {
 extension AddBeaconDetailVC: AddBeaconDetailViewDelegate {
   func submit(name: String, location: String) {
     
+    // 찾아가면 주석있음
     IBeacon.shared.readyToUpdateBeacon(index: indexRow, name: name, location: location)
-    print("업데이트 준비 후 uploadBeacons: ", IBeacon.shared.uploadBeacons)
-    print("업데이트 준비 후 downloadBeacons: ", IBeacon.shared.downloadBeacons)
-    print("업데이트 준비 후 newBeacons: ", IBeacon.shared.newBeacons)
-    print("\n ===== 한단 끝냄 ===== \n")
-    
+    // 이것도
     Firebase.shared.addBeacons(IBeacon.shared.uploadBeacons) {
       switch $0 {
       case .failure(let err):
@@ -53,10 +52,11 @@ extension AddBeaconDetailVC: AddBeaconDetailViewDelegate {
       case .success(_):
         DispatchQueue.main.async {
           print("success")
-          self.addBeaconDetailView.reset()
           self.presentingViewController?.dismiss(animated: true)
         }
       }
+      // 이건 보면 알지 이름만
+      self.addBeaconDetailView.reset()
     }
     
   }
